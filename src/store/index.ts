@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+﻿import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   FLUSH,
@@ -12,15 +12,21 @@ import {
 } from 'redux-persist';
 
 import authReducer from '../features/auth/slice';
+import uiReducer from '../features/ui/slice';
+import videoFeedReducer from '../features/video-feed/slice';
+import dictionaryReducer from '../features/dictionary/slice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  ui: uiReducer,
+  videoFeed: videoFeedReducer,
+  dictionary: dictionaryReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'ui'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

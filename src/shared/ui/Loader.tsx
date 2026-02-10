@@ -1,11 +1,11 @@
-import { ActivityIndicator } from 'react-native';
+﻿import { ActivityIndicator } from 'react-native';
 import styled from 'styled-components/native';
 
 const Wrap = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: #0f111a;
+  background-color: #060b1f;
 `;
 
 export function Loader() {
